@@ -31,7 +31,7 @@ int main() {
         bool isValid = true;
         for (int i = 0; i < primeInteger.length(); i++) {
             // If the character is not between '0' and '9' and is negative, it is invalid
-            if (primeInteger[i] < '0' || primeInteger[i] > '9' || primeInteger[i] == '-') {
+            if (primeInteger[i] < '0' || primeInteger[i] > '9' ||) {
                 isValid = false;
                 break; // Stop checking as soon as we find one bad character
             }
