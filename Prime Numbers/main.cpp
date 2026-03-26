@@ -30,8 +30,8 @@ int main() {
         // Validation (Check every character to make sure it is a digit)
         bool isValid = true;
         for (int i = 0; i < primeInteger.length(); i++) {
-            // If the character is not between '0' and '9' and is negative, it's "garbage"
-            if (primeInteger[i] < '0' || primeInteger[i] > '9') {
+            // If the character is not between '0' and '9' and is negative, it is invalid
+            if (primeInteger[i] < '0' || primeInteger[i] > '9' || primeInteger[i] == '-') {
                 isValid = false;
                 break; // Stop checking as soon as we find one bad character
             }
@@ -39,7 +39,7 @@ int main() {
 
         // If the input was invalid, print invalid input message and restart the loop
         if (!isValid) {
-            cout << "Invalid input." << endl;
+            cout << "Invalid input. Please enter a positive integer" << endl;
             continue;
         }
 
