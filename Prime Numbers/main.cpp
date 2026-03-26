@@ -1,58 +1,79 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-	double inputVal;
-	int num;
+    string primeInteger;
 
-	cout << "Positive Prime Integer Tester Game" << endl;
+    // Display message at the very start of the program
+    cout << "Positive Prime Integer Tester" << endl;
 
-	while (true) {
-		cout << "(Enter 0 to quit) Enter an integer: ";
+    // Start an infinite loop that keeps asking for numbers until the quitting condition is met
+    while (true) {
+        cout << "(Enter 'q' to quit) Enter a positive integer: ";
 
-		// Check if the input is text
-		if (!(cin >> inputVal)) {
-			cin.clear();
-			cin.ignore(1000, '\n'); // Skip the text characters
-			cout << "Invalid input." << endl;
-			continue;
-		}
+        // getline to read the whole line (even if it has spaces or text)
+        // This prevents the program from looping forever if the user types a sentence (multiple words)
+        getline(cin, primeInteger);
 
-		// Check if it was a decimal
-		num = (int)inputVal;
-		if (inputVal != (double)num) {
-			cout << "Invalid input." << endl;
-			continue;
-		}
+        // Exit Condition (If the user types 'q', break out of the while loop)
+        if (primeInteger == "q") {
+            break;
+        }
 
-		// Exit condition
-		if (num == 0) {
-			break; // Break the loop
-		}
+        // Checks if the user just presses Enter (has entered nothing
+        /*if (primeInteger.length() == 0) {
+            continue;
+        }*/
 
-		// Checking for Prime Number
-		if (num < 2) {
-			cout << "Not a positive prime integer." << endl;
-		} else {
-			bool isPrime = true;
-			for (int i = 2; i < num; i++) {
-				if (num % i == 0) {
-					isPrime = false;
-					break;
-				}
-			}
+        // Validation (Check every character to make sure it is a digit)
+        bool isValid = true;
+        for (int i = 0; i < primeInteger.length(); i++) {
+            // If the character is not between '0' and '9' and is negative, it's "garbage"
+            if (primeInteger[i] < '0' || primeInteger[i] > '9') {
+                isValid = false;
+                break; // Stop checking as soon as we find one bad character
+            }
+        }
 
-			if (isPrime) {
-				cout << num << " is a positive prime integer!"  << endl;
-			} else {
-				cout << num << " is not a positive prime integer." << endl;
-			}
-		}
-	}
+        // If the input was invalid, print invalid input message and restart the loop
+        if (!isValid) {
+            cout << "Invalid input." << endl;
+            continue;
+        }
 
-	// Quit Message
-	cout << "Thank you for playing. Goodbye!" << endl;
+        // Conversion (Changes the string into an integer "number")
+        int num = 0;
+        for (int i = 0; i < primeInteger.length(); i++) {
+            num = num * 10 + (primeInteger[i] - '0');
+        }
 
-	return 0;
+        // Prime Logic (Determine if the number is a prime number or not)
+        // Prime numbers must be greater than or equal to 2
+        if (num < 2) {
+            cout << num << " is not a positive prime integer." << endl;
+        } else {
+            bool isPrime = true;
+            // Check for any divisors between 2 and the number itself
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    isPrime = false; // Found a factor, so it's not prime
+                    break;
+                }
+            }
+
+            // Report the result to the user
+            if (isPrime) {
+                cout << num << " is a positive prime integer!" << endl;
+            } else {
+                cout << num << " is not a positive prime integer." << endl;
+            }
+        }
+    }
+
+    // Quit message (Runs only after the loop is broken by entering 'q')
+    cout << "Quitting the program..... Goodbye!" << endl;
+
+    return 0;
 }
