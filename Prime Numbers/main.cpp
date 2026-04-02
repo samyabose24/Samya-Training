@@ -14,7 +14,6 @@ int main() {
         cout << "(Enter 'q' to quit) Enter a positive integer: ";
 
         // getline to read the whole line (even if it has spaces or text)
-        // This prevents the program from looping forever if the user types a sentence (multiple words)
         getline(cin, primeInteger);
 
         // Exit Condition (If the user types 'q', break out of the while loop)
@@ -22,22 +21,31 @@ int main() {
             break;
         }
 
-        // Checks if the user just presses Enter (has entered nothing
-        /*if (primeInteger.length() == 0) {
-            continue;
-        }*/
-
-        // Validation (Check every character to make sure it is a digit)
+        // Validation (Check every character to make sure it is not an invalid input)
         bool isValid = true;
-        for (int i = 0; i < primeInteger.length(); i++) {
-            // If the character is not between '0' and '9' and is negative, it is invalid
-            if (primeInteger[i] < '0' || primeInteger[i] > '9') {
+        bool isNegative = false;
+
+        // Check if the first character is a minus sign
+        if (primeInteger[0] == '-') {
+            isNegative = true;
+            // A minus sign by itself is invalid
+            if (primeInteger.length() == 1) {
                 isValid = false;
-                break; // Stop checking as soon as we find one bad character
             }
         }
 
-        // If the input was invalid, print invalid input message and restart the loop
+        // Check the rest of the characters
+        // If it's negative, we start checking from index 1. If positive, index 0.
+        int startIndex = (isNegative) ? 1 : 0;
+
+        for (int i = startIndex; i < primeInteger.length(); i++) {
+            if (primeInteger[i] < '0' || primeInteger[i] > '9') {
+                isValid = false;
+                break;
+            }
+        }
+
+        // If the input had garbage or was just a "-", print Invalid Input and restart the loop
         if (!isValid) {
             cout << "Invalid input. Please enter a positive integer" << endl;
             continue;
@@ -45,20 +53,28 @@ int main() {
 
         // Conversion (Changes the string into an integer "number")
         int num = 0;
-        for (int i = 0; i < primeInteger.length(); i++) {
+        for (int i = startIndex; i < primeInteger.length(); i++) {
             num = num * 10 + (primeInteger[i] - '0');
         }
 
+        // Apply the negative sign if needed
+        if (isNegative) {
+            num = -num;
+        }
+
         // Prime Logic (Determine if the number is a prime number or not)
-        // Prime numbers must be greater than or equal to 2
-        if (num < 2) {
+        // When the user inputs a negative integer
+        if (num < 0) {
+            cout << num << " is a negative integer." << endl;
+            // Prime numbers must be greater than or equal to 2
+        } else if (num < 2) {
             cout << num << " is not a positive prime integer." << endl;
         } else {
-            bool isPrime = true;
             // Check for any divisors between 2 and the number itself
+            bool isPrime = true;
             for (int i = 2; i < num; i++) {
                 if (num % i == 0) {
-                    isPrime = false; // Found a factor, so it's not prime
+                    isPrime = false;
                     break;
                 }
             }

@@ -41,7 +41,7 @@ int main() {
             sum += num;             // Keep track of the total sum for calculating the Mean
         }
 
-        // Print the list to both the console and the output file
+        // Print the numbers in the list to both the console and the output file
         cout << "List " << i + 1 << " values: " << endl;
         outputFile << "List " << i + 1 << " values: " << endl;
         for (int j = 0; j < (int)numbers.size(); j++) {
