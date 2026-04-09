@@ -47,7 +47,7 @@ int main() {
 
         // If the input had garbage or was just a "-", print Invalid Input and restart the loop
         if (!isValid) {
-            cout << "Invalid input. Please enter a positive integer" << endl;
+            cout << "Invalid input. Please enter a integer" << endl;
             continue;
         }
 
