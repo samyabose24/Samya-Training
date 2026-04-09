@@ -3,4 +3,11 @@ project(Shapes_Manager)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Shapes_Manager main.cpp)
+add_executable(Shapes_Manager main.cpp
+        Shape.cpp
+        Shape.h
+        Triangle.cpp
+        Triangle.h
+        Rectangle.cpp
+        Rectangle.h
+)
