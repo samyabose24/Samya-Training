@@ -6,14 +6,14 @@ class Shape {
 protected:
     std::string name;
     double length;
-    double width;
+    double breadth;
 
 public:
     Shape();
     virtual ~Shape() {}
 
     virtual void setLength(double l) = 0;
-    virtual void setWidth(double w) = 0;
+    virtual void setBreadth(double b) = 0;
     virtual void calculateArea() = 0;
     virtual void printArea() = 0;
     virtual std::string getType() = 0;
