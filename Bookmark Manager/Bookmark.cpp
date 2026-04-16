@@ -1,7 +1,7 @@
 #include "Bookmark.h"
 #include <iostream>
-#include <windows.h>  // Required for Windows to open the browser
-#include <shellapi.h> // Required for ShellExecute
+#include <windows.h>  // Required for Windows to open the browser ( A Library that allows c++ to talk to the Windows Operating System)
+#include <shellapi.h> // Required for ShellExecute command
 
 using namespace std;
 
@@ -38,5 +38,6 @@ void Bookmark::printInfo() {
 // Opens the URl in your default browser
 void Bookmark::openInBrowser() {
     cout << "\nOpening the bookmark,'" << name << "' in your browser..." << endl;
-    ShellExecuteA(NULL, "open", url.c_str(), NULL, NULL, SW_SHOWNORMAL);
+    ShellExecuteA(NULL , "open", url.c_str(), NULL, NULL, SW_SHOWNORMAL);
+    //NULL- For pop up, IpParameters- For extra info(opening a specific tab), IpDirectory-which folder to start in, nShowCmd- how to appear(shownormal - default size)
 }

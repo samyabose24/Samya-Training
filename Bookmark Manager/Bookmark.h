@@ -2,8 +2,6 @@
 #define BOOKMARK_H
 #include <string>
 
-using namespace std;
-
 // Encapsulation: We group data and methods together.
 class Bookmark {
     private: // Private Class: Only accessible by functions inside this class
