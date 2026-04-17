@@ -11,10 +11,27 @@ int main() {
 
     // Start an infinite loop that keeps asking for numbers until the quitting condition is met
     while (true) {
-        cout << "(Enter 'q' to quit) Enter a positive integer: ";
+        cout << "(Enter 'q' to quit) Enter an integer: ";
 
         // getline to read the whole line (even if it has spaces or text)
         getline(cin, primeInteger);
+
+        // Getting rid of any leading or trailing spaces in the user input
+        // First While loop for trimming the leading spaces
+        int start = 0;
+        while (start < primeInteger.length() && primeInteger[start] == ' ') {
+            start++;
+        }
+        // Second While loop for trimming the trailing spaces
+        int end = primeInteger.length() - 1;
+        while (end >= 0 && primeInteger[end] == ' ') {
+            end--;
+        }  
+
+        // Extracting the number from the user input using substr() ( Extracting the trimmed string using substring)
+        if (start <= end) {
+            primeInteger = primeInteger.substr(start, end - start + 1);
+        }
 
         // Exit Condition (If the user types 'q', break out of the while loop)
         if (primeInteger == "q") {
@@ -47,7 +64,7 @@ int main() {
 
         // If the input had garbage or was just a "-", print Invalid Input and restart the loop
         if (!isValid) {
-            cout << "Invalid input. Please enter a integer" << endl;
+            cout << "Invalid input." << endl;
             continue;
         }
 
