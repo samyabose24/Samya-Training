@@ -26,11 +26,16 @@ int main() {
         int end = primeInteger.length() - 1;
         while (end >= 0 && primeInteger[end] == ' ') {
             end--;
-        }  
+        }
 
         // Extracting the number from the user input using substr() ( Extracting the trimmed string using substring)
         if (start <= end) {
             primeInteger = primeInteger.substr(start, end - start + 1);
+        }
+        else {
+            primeInteger = " "; // Input was all spaces
+            // Error message for only spaces in input
+            cout << "Input cannot be empty" << endl;
         }
 
         // Exit Condition (If the user types 'q', break out of the while loop)
@@ -110,3 +115,4 @@ int main() {
 
     return 0;
 }
+
