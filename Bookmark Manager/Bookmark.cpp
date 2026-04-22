@@ -9,8 +9,8 @@ using namespace std;
 Bookmark::Bookmark(string bookmarkName, string bookmarkUrl) {
     name = bookmarkName;
 
-    // (Simple URL Fix)
-    // Look for https:// and add ot to the start if missing
+    // URL Validation and fix
+    // Look for https:// at the start and add it to the start if it is missing
     if (bookmarkUrl.find("https://") != 0) {
         cout << "\nWARNING !! Incorrect URL syntax for the bookmark " << name << ". Fixing URL...." << endl;
         bookmarkUrl = "https://" + bookmarkUrl;
@@ -18,7 +18,7 @@ Bookmark::Bookmark(string bookmarkName, string bookmarkUrl) {
 
     // Remove junk (unnecessary special characters) from the end
     while (!bookmarkUrl.empty() && !isalnum(bookmarkUrl.back())) { // isalnum() checks if the entered character is alphanumeric or not
-        bookmarkUrl.pop_back(); // Removes last character from the url
+        bookmarkUrl.pop_back(); // Removes junk characters from the back
     }
 
     // Look for .com in the end and add it if it is missing
@@ -27,6 +27,7 @@ Bookmark::Bookmark(string bookmarkName, string bookmarkUrl) {
     }
 
     url = bookmarkUrl;
+
     visitCount = 0; // Each new bookmark starts with 0 visits
 }
 

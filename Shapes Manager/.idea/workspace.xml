@@ -29,12 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715a54f0-2cd8-4da5-9c7b-c077436f28bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Bookmark Manager/Bookmark.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Bookmark Manager/Bookmark.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bookmark Manager/Bookmark.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Bookmark Manager/Bookmark.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Number_Calculations/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Number_Calculations/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookmark Manager/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Bookmark Manager/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Triangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Triangle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +99,7 @@
       <workItem from="1775765954392" duration="5812000" />
       <workItem from="1775868801814" duration="5724000" />
       <workItem from="1776178738549" duration="2460000" />
+      <workItem from="1776889716310" duration="7000" />
     </task>
     <servers />
   </component>
