@@ -9,13 +9,24 @@ using namespace std;
 Bookmark::Bookmark(string bookmarkName, string bookmarkUrl) {
     name = bookmarkName;
 
-    // (URL Validation) Error checking for the URL syntax and fixing incorrect URL syntax
-    if (bookmarkUrl.find("https://") && bookmarkUrl.find(".com") != 0) {
-        cout << "\nWARNING !!! Incorrect URL syntax for the bookmark, " << name << ". Fixing URL...." << endl;
-        url = "https://" + bookmarkUrl + ".com";
-    } else {
-        url = bookmarkUrl;
+    // (Simple URL Fix)
+    // Look for https:// and add ot to the start if missing
+    if (bookmarkUrl.find("https://") != 0) {
+        cout << "\nWARNING !! Incorrect URL syntax for the bookmark " << name << ". Fixing URL...." << endl;
+        bookmarkUrl = "https://" + bookmarkUrl;
     }
+
+    // Remove junk (unnecessary special characters) from the end
+    while (!bookmarkUrl.empty() && !isalnum(bookmarkUrl.back())) { // isalnum() checks if the entered character is alphanumeric or not
+        bookmarkUrl.pop_back(); // Removes last character from the url
+    }
+
+    // Look for .com in the end and add it if it is missing
+    if (bookmarkUrl.size() < 4 || bookmarkUrl.substr(bookmarkUrl.size() - 4) != ".com") {
+        bookmarkUrl += ".com";
+    }
+
+    url = bookmarkUrl;
     visitCount = 0; // Each new bookmark starts with 0 visits
 }
 

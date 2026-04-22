@@ -4,7 +4,7 @@
 
 // Encapsulation: We group data and methods together.
 class Bookmark {
-    private: // Private Class: Only accessible by functions inside this class
+private: // Private Class: Only accessible by functions inside this class
     std::string name;
     std::string url;
     int visitCount;

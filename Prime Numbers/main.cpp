@@ -17,6 +17,7 @@ int main() {
         getline(cin, primeInteger);
 
         // Getting rid of any leading or trailing spaces in the user input
+
         // First While loop for trimming the leading spaces
         int start = 0;
         while (start < primeInteger.length() && primeInteger[start] == ' ') {
@@ -28,13 +29,13 @@ int main() {
             end--;
         }
 
-        // Extracting the number from the user input using substr() ( Extracting the trimmed string using substring)
+        // Extracting the number from the user input using substr() (Extracting the trimmed string using substring)
         if (start <= end) {
             primeInteger = primeInteger.substr(start, end - start + 1);
         }
         else {
-            primeInteger = " "; // Input was all spaces
-            // Error message for only spaces in input
+            primeInteger = " "; // Input was only spaces
+            // Error message when the input was only spaces
             cout << "Input cannot be empty" << endl;
         }
 
@@ -58,7 +59,7 @@ int main() {
 
         // Check the rest of the characters
         // If it's negative, we start checking from index 1. If positive, index 0.
-        int startIndex = (isNegative) ? 1 : 0;
+        int startIndex = (isNegative) ? 1 : 0; // ? - Conditional Operator like if-else
 
         for (int i = startIndex; i < primeInteger.length(); i++) {
             if (primeInteger[i] < '0' || primeInteger[i] > '9') {
@@ -115,4 +116,3 @@ int main() {
 
     return 0;
 }
-
