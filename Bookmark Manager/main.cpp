@@ -50,11 +50,11 @@ int main() {
     myBookmarks[3].visit();
 
     // Opening the URls in the default browser
-    /*myBookmarks[0].openInBrowser();
+    myBookmarks[0].openInBrowser();
     myBookmarks[1].openInBrowser();
     myBookmarks[2].openInBrowser();
     myBookmarks[3].openInBrowser();
-    myBookmarks[4].openInBrowser();*/
+    myBookmarks[4].openInBrowser();
 
 
     // Print the Updated Bookmark List to the console

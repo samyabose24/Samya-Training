@@ -25,7 +25,7 @@ int main() {
     }
 
     // Print the name, type and area of the shapes
-    cout << "List of the Shapes" << endl;
+    cout << "List of Shapes" << endl;
     cout << "Length: 10 and Breadth: 5" << endl;
     for (Shape* s : myShapes) {
         s->calculateArea();

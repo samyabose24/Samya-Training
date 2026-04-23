@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <sstream>
 
 using namespace std;
 
@@ -47,7 +48,6 @@ double getMode(vector<double> numbers) {
 
 // Main
 int main() {
-
     // File Setup
     // For reading the Input File
     ifstream inputFile("Input.txt");
@@ -68,37 +68,47 @@ int main() {
         double val;
 
         // Reads numbers one by one until it hits the end of the line
-        while (inputFile >> val ) {
-            numbers.push_back(val);
-            // This stops the loop at the end of the line so that it does not grab the next list
-            if (inputFile.peek() == '\n' || inputFile.eof()) break; // peek stops reading if the next character is a new line
-            // eof stops reading when it reached the end of the file.
+        string line;
+        getline(inputFile, line); // move to next line after numLines
+
+        for (int i = 0; i < numLines; i++) {
+            vector<double> numbers;
+
+            getline(inputFile, line); // read full line
+
+            stringstream ss(line);
+            double val;
+
+            // This automatically reads numbers separated by spaces
+            while (ss >> val) {
+                numbers.push_back(val);
+            }
+
+            // Print numbers in the list to both the console and the output file
+            cout << "List " << i + 1 << " values: " << endl;
+            outputFile << "List " << i + 1 << " values: " << endl;
+            for (int j = 0; j < numbers.size(); j++) {
+                cout << numbers[j] << " ";
+                outputFile << numbers[j] << " ";
+            }
+
+
+            // Output results
+            // Display results on the console
+            cout << "\nThe Mean is " << getMean(numbers) << endl;
+            cout << "The Median is " << getMedian(numbers) << endl;
+            cout << "The Mode is " << getMode(numbers) << endl << endl;
+
+            // Save Results to the Output File (Results.txt)
+            outputFile << "\nThe Mean is " << getMean(numbers) << endl;
+            outputFile << "The Median is " << getMedian(numbers) << endl;
+            outputFile << "The Mode is " << getMode(numbers) << endl << endl;
         }
 
-        // Print numbers in the list to both the console and the output file
-        cout << "List " << i + 1 << " values: " << endl;
-        outputFile << "List " << i + 1 << " values: " << endl;
-        for (int j = 0; j < numbers.size(); j++) {
-            cout << numbers[j] << " ";
-            outputFile << numbers[j] << " ";
-        }
+        // Close the input and output files
+        inputFile.close();
+        outputFile.close();
 
-
-        // Output results
-        // Display results on the console
-        cout << "\nThe Mean is " << getMean(numbers) << endl;
-        cout << "The Median is " << getMedian(numbers) << endl;
-        cout << "The Mode is " << getMode(numbers) << endl << endl;
-
-        // Save Results to the Output File (Results.txt)
-        outputFile << "\nThe Mean is " << getMean(numbers) << endl;
-        outputFile << "The Median is " << getMedian(numbers) << endl;
-        outputFile << "The Mode is " << getMode(numbers) << endl << endl;
+        return 0;
     }
-
-    // Close the input and output files
-    inputFile.close();
-    outputFile.close();
-
-    return 0;
 }
