@@ -68,19 +68,19 @@ int main() {
         double val;
 
         // Reads numbers one by one until it hits the end of the line
-        string line;
+        string line; // Creates a string variable called line
         getline(inputFile, line); // move to next line after numLines
 
         for (int i = 0; i < numLines; i++) {
             vector<double> numbers;
 
-            getline(inputFile, line); // read full line
+            getline(inputFile, line); // read full line (Reads one line and stores it)
 
-            stringstream ss(line);
-            double val;
+            stringstream ss(line); // Lets us read from the string like it is input
+            double val; // Stores each number
 
             // This automatically reads numbers separated by spaces
-            while (ss >> val) {
+            while (ss >> val) { // Reads number one by one
                 numbers.push_back(val);
             }
 
@@ -112,3 +112,5 @@ int main() {
         return 0;
     }
 }
+
+// Used getline() to read each line like a string and then used stringstream to automatically extract numbers that were separated by spaces
