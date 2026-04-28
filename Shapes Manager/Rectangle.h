@@ -1,10 +1,11 @@
-#ifndef REACTANGLE_H
-#define REACTANGLE_H
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 #include "Shape.h"
 
-class Rectangle: public Shape {
+class Rectangle : public Shape {
 private:
     double area;
+
 public:
     void setLength(double l) override;
     void setBreadth(double b) override;
@@ -12,4 +13,5 @@ public:
     void printArea() override;
     std::string getType() override;
 };
+
 #endif

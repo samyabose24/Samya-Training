@@ -3,12 +3,12 @@
 #include <string>
 
 class Shape {
-protected:
+protected: // Protected class - Members are accessible only within the class and by any subclasses that inherit from it.
     std::string name;
     double length;
     double breadth;
 
-public:
+public: // The methods
     Shape();
     virtual ~Shape() {}
 
@@ -20,6 +20,6 @@ public:
 
     void setName(std::string n);
     std::string getName();
-
 };
+
 #endif

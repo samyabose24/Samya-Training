@@ -29,9 +29,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715a54f0-2cd8-4da5-9c7b-c077436f28bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/EquilateralTriangle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EquilateralTriangle.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IsoscelesTriangle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IsoscelesTriangle.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ScaleneTriangle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ScaleneTriangle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookmark Manager/Bookmark.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Bookmark Manager/Bookmark.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Bookmark Manager/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Bookmark Manager/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Number_Calculations/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Number_Calculations/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rectangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Rectangle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rectangle.h" beforeDir="false" afterPath="$PROJECT_DIR$/Rectangle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Shape.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shape.h" beforeDir="false" afterPath="$PROJECT_DIR$/Shape.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Triangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Triangle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Triangle.h" beforeDir="false" afterPath="$PROJECT_DIR$/Triangle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +97,11 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Shapes_Manager" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Shapes_Manager" TARGET_NAME="Shapes_Manager" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Shapes_Manager" RUN_TARGET_NAME="Shapes_Manager">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -103,6 +123,8 @@
       <workItem from="1776889716310" duration="7000" />
       <workItem from="1776891029706" duration="1025000" />
       <workItem from="1776971365232" duration="684000" />
+      <workItem from="1776977317491" duration="1296000" />
+      <workItem from="1777387850880" duration="2523000" />
     </task>
     <servers />
   </component>

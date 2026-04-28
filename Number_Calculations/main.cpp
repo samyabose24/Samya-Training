@@ -112,5 +112,3 @@ int main() {
         return 0;
     }
 }
-
-// Used getline() to read each line like a string and then used stringstream to automatically extract numbers that were separated by spaces

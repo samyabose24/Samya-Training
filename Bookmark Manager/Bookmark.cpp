@@ -18,11 +18,11 @@ Bookmark::Bookmark(string bookmarkName, string bookmarkUrl) {
 
     // Remove junk (unnecessary special characters) from the end
     while (!bookmarkUrl.empty() && !isalnum(bookmarkUrl.back())) { // isalnum() checks if the entered character is alphanumeric or not
-        bookmarkUrl.pop_back(); // Removes junk characters from the back
+        bookmarkUrl.pop_back(); // Removes junk characters from the back (Removes it if it is not a letter or number)
     }
 
     // Look for .com in the end and add it if it is missing
-    if (bookmarkUrl.size() < 4 || bookmarkUrl.substr(bookmarkUrl.size() - 4) != ".com") {
+    if (bookmarkUrl.size() < 4 || bookmarkUrl.substr(bookmarkUrl.size() - 4) != ".com") { // Checks last 4 characters to find out if it ends with .com
         bookmarkUrl += ".com";
     }
 

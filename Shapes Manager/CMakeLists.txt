@@ -10,4 +10,10 @@ add_executable(Shapes_Manager main.cpp
         Triangle.h
         Rectangle.cpp
         Rectangle.h
+        EquilateralTriangle.cpp
+        EquilateralTriangle.h
+        IsoscelesTriangle.cpp
+        IsoscelesTriangle.h
+        ScaleneTriangle.cpp
+        ScaleneTriangle.h
 )
